@@ -20,7 +20,7 @@ NBAStandingsByDate <- function(date_string = Sys.Date()){
                "&year=", y,
                "&lg_id=NBA", sep = "")
   r <- read_html(url)
-  east <- html_table(r, fill = T)[[2]]
-  west <- html_table(r, fill = T)[[3]]
+  east <- html_table(r, fill = T)[[1]]
+  west <- html_table(r, fill = T)[[2]]
   return(list(East = east, West = west))
 }
